@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WashU FSAE Brake Rotor - Minh Binh Nguyen</title>
+
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-blue': '#005792',
+                        'brand-dark': '#0D2235',
+                        'brand-light': '#F6F9FC',
+                        'brand-accent': '#00A8E8',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Load Google Font: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Load Icons (Lucide) -->
+    <script src="https://cdn.jsdelivr.net/npm/lucide-static@latest/lucide.min.js" defer></script>
+
+    <!-- Load Custom Styles -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    
+    <!-- Starfield script -->
+    <script src="../assets/js/starfield.js"></script>
+</head>
+<body class="bg-black font-sans text-white antialiased">
+    <!-- Star background canvas (animated by starfield.js) -->
+    <canvas id="star-background" class="fixed inset-0 w-full h-full pointer-events-none z-0"></canvas>
+    
+    <!-- Header & Navigation -->
+    <header class="relative z-10 bg-black/50 backdrop-blur-md sticky top-0 border-b border-gray-800">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="../index.html" class="text-xl font-bold text-white hover:text-brand-accent transition-colors">
+                <i data-lucide="arrow-left" class="inline-block w-6 h-6 mr-2"></i>
+                Back to Portfolio
+            </a>
+            <!-- Project Navigation -->
+            <div class="flex items-center gap-4">
+                <a href="pedal-box.html" class="text-white hover:text-brand-accent transition-colors flex items-center">
+                    Next Project
+                    <i data-lucide="arrow-right" class="inline-block w-6 h-6 ml-2"></i>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="relative z-10 container mx-auto px-6 py-12">
+        <!-- Project Header -->
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl font-bold text-white mb-4">WashU FSAE Brake Rotor</h1>
+            <div class="flex flex-wrap gap-2 mb-8">
+                <span class="bg-gray-800 text-brand-accent px-3 py-1 rounded-full text-sm font-medium">SolidWorks</span>
+                <span class="bg-gray-800 text-brand-accent px-3 py-1 rounded-full text-sm font-medium">CAD/CAE</span>
+                <span class="bg-gray-800 text-brand-accent px-3 py-1 rounded-full text-sm font-medium">Material Science</span>
+            </div>
+        </div>
+
+        <!-- Project hero -->
+        <div class="project-hero max-w-3xl mx-auto mb-8">
+            <img src="../assets/images/Mounted Rotor.jpg" alt="Brake Rotor Assembly Complete" class="w-full">
+            <div class="hero-caption">WashU FSAE — Brake Rotor Assembly</div>
+        </div>
+
+        <!-- Brake Rotor Drawing / Description two-column layout -->
+        <section class="project-grid max-w-5xl mx-auto mb-12">
+            <div class="project-left" style="flex: 0 0 80%;">
+                <img src="../assets/images/Brake rotor drawing.png" alt="Brake Rotor Drawing" class="w-full">
+            </div>
+            <div class="project-right prose prose-lg prose-invert" style="flex: 1;">
+                <h2 class="project-title">Brake Rotor Redesign</h2>
+                <div class="callout"><strong>Problem:</strong> The team's previous brake rotor design was too light and not stiff enough. While it was good for cooling, it flexed and warped under the high heat and force from the calipers, leading to inconsistent and unreliable braking performance.</div>
+                <h3>My Contribution</h3>
+                <p>I was involved in the redesign of a new, more robust rotor using 4140 Steel. My main role was to perform FEA (Finite Element Analysis) in SolidWorks to prove the new design's strength and stiffness before it was manufactured.</p>
+            </div>
+        </section>
+
+        <!-- Front Rotor Static FEA Section -->
+        <section class="max-w-5xl mx-auto">
+            <h2 class="text-2xl font-bold mb-6 text-white">Front Rotor Static FEA</h2>
+            <div class="prose prose-lg prose-invert mb-8">
+                <p><strong>Strength:</strong> Achieved a 2.37x Factor of Safety. (The max stress was 1.749e+08 N/m², well below the 4.150e+08 N/m² yield strength).</p>
+                <p><strong>Stiffness:</strong> Showed a maximum deflection of only 0.013 mm</p>
+            </div>
+            <div class="space-y-4">
+                <img src="../assets/images/Front Static FEA 1.png" alt="Front Rotor Static FEA 1" class="w-full">
+                <img src="../assets/images/Front Static FEA 2.png" alt="Front Rotor Static FEA 2" class="w-full">
+                <img src="../assets/images/Front Static FEA 3.png" alt="Front Rotor Static FEA 3" class="w-full">
+                <img src="../assets/images/Front Static FEA 4.png" alt="Front Rotor Static FEA 4" class="w-full">
+                <img src="../assets/images/Front Static FEA 5.png" alt="Front Rotor Static FEA 5" class="w-full">
+                <img src="../assets/images/Front Static FEA 6.png" alt="Front Rotor Static FEA 6" class="w-full">
+            </div>
+        </section>
+
+        <!-- Rear Rotor Static FEA Section -->
+        <section class="max-w-5xl mx-auto">
+            <h2 class="text-2xl font-bold mb-6 text-white">Rear Rotor Static FEA</h2>
+            <div class="prose prose-lg prose-invert mb-8">
+                <p><strong>Strength:</strong> Achieved a 5.43x Factor of Safety. (The max stress was 7.637e+07 N/m², well below the 4.150e+08 N/m² yield strength).</p>
+                <p><strong>Stiffness:</strong> Showed a maximum deflection of only 0.006 mm (5.880e-03 mm).</p>
+            </div>
+            <div class="space-y-4">
+                <img src="../assets/images/Rear FEA Rotor 1.png" alt="Rear Rotor Static FEA 1" class="w-full">
+                <img src="../assets/images/Rear FEA Rotor 2.png" alt="Rear Rotor Static FEA 2" class="w-full">
+                <img src="../assets/images/Rear FEA Rotor 3.png" alt="Rear Rotor Static FEA 3" class="w-full">
+                <img src="../assets/images/Rear FEA Rotor 4.png" alt="Rear Rotor Static FEA 4" class="w-full">
+                <img src="../assets/images/Rear FEA Rotor 5.png" alt="Rear Rotor Static FEA 5" class="w-full">
+                <img src="../assets/images/Rear FEA Rotor 6.png" alt="Rear Rotor Static FEA 6" class="w-full">
+            </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative z-10 bg-gray-900/80 mt-24">
+        <div class="container mx-auto px-6 py-8 text-center text-gray-500">
+            <p>&copy; 2025 Minh Binh Nguyen. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Load Custom Scripts -->
+    <script src="../assets/js/script.js"></script>
+</body>
+</html>

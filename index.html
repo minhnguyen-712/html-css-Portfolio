@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minh Binh Nguyen - Mechanical Engineering</title>
+
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Inline Tailwind config for immediate effect
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-blue': '#005792',
+                        'brand-dark': '#0A0A0F',
+                        'brand-light': '#F6F9FC',
+                        'brand-accent': '#00A8E8',
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Load Google Font: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Load Icons (Lucide) -->
+    <script src="https://cdn.jsdelivr.net/npm/lucide-static@latest/lucide.min.js" defer></script>
+
+    <!-- Load Custom Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Favicon and Web Manifest -->
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#005792">
+    <!-- Starfield script (draws canvas with id 'star-background') -->
+    <script src="assets/js/starfield.js"></script>
+</head>
+<body class="bg-black text-white font-sans antialiased">
+
+    <!--
+      Quick asset locations (drop your files here):
+      - Logo SVG: assets/images/logo.svg
+      - Project images: assets/images/<project>-thumb.jpg
+      - Hero background video (optional): assets/videos/hero-bg.mp4
+      - Resume PDF: assets/Minh_Nguyen_Resume.pdf
+      See assets/ASSETS.md for more guidance.
+    -->
+
+    <!-- Star background canvas (animated by starfield.js) -->
+    <canvas id="star-background" class="fixed inset-0 w-full h-full pointer-events-none z-0"></canvas>
+
+    <!-- Header & Navigation -->
+    <header class="relative z-10">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-3" title="Home">
+                <img src="assets/images/Logo%20MN.webp" alt="Logo MN" class="logo-img h-10" />
+            </a>
+            <div class="hidden md:flex space-x-6 text-sm">
+                <a href="#about" class="hover:text-brand-accent">About</a>
+                <a href="#experience" class="hover:text-brand-accent">Experience</a>
+                <a href="#projects" class="hover:text-brand-accent">Projects</a>
+                <a href="#contact" class="hover:text-brand-accent">Contact</a>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6H20M4 12H20M4 18H20" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="md:hidden fixed inset-0 bg-brand-dark/95 backdrop-blur-sm z-50 hidden">
+                <div class="flex flex-col items-center justify-center h-full">
+                    <button id="close-menu-btn" class="absolute top-4 right-6 p-2">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 6L6 18M6 6l12 12" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="flex flex-col items-center space-y-8 text-lg">
+                        <a href="#about" class="text-white hover:text-brand-accent">About</a>
+                        <a href="#experience" class="text-white hover:text-brand-accent">Experience</a>
+                        <a href="#projects" class="text-white hover:text-brand-accent">Projects</a>
+                        <a href="#contact" class="text-white hover:text-brand-accent">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="relative z-10">
+        <!-- Hero Section -->
+        <section id="home" class="relative text-white animated-section h-screen min-h-[600px] flex items-center" style="animation-delay: 100ms;">
+            <!-- Team Background Image with Overlay -->
+            <div class="absolute inset-0 w-full h-full">
+                <img 
+                    src="assets/images/All-Team.jpg" 
+                    alt="WashU Racing Team" 
+                    class="absolute inset-0 w-full h-full object-cover"
+                    style="z-index: -1;"
+                >
+                <div class="absolute inset-0 bg-gradient-to-b from-black/60 to-black/80"></div>
+            </div>
+
+            <div class="relative z-10 container mx-auto px-6 flex flex-col-reverse md:flex-row items-center justify-between gap-12">
+                <div class="md:w-3/5 text-center md:text-left">
+                    <span class="text-brand-accent font-semibold">Mechanical Engineering Student</span>
+                    <h1 class="text-4xl md:text-6xl font-bold text-white mt-2 mb-4">
+                        Hi, I'm Minh Binh Nguyen
+                    </h1>
+                    <p class="text-lg text-gray-200 max-w-2xl mb-8 mx-auto md:mx-0">
+                        A passionate and detail-oriented mechanical engineering student at Washington University in St. Louis. I thrive on hands-on projects, from optimizing braking systems for Formula SAE to custom-building high-performance bicycles.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <a href="#projects" class="w-full sm:w-auto text-center bg-brand-accent text-white px-6 py-3 rounded-lg font-semibold shadow-md hover:bg-sky-500 transition-colors">
+                            View My Projects
+                        </a>
+                        <!-- Resume: place your PDF at assets/Minh_Nguyen_Resume.pdf to enable this link -->
+                        <a href="assets/Minh_Nguyen_Resume.pdf" class="w-full sm:w-auto text-center bg-white text-black border border-gray-300 px-6 py-3 rounded-lg font-semibold shadow-sm hover:bg-gray-100 transition-colors" download>
+                            Download Resume
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-2/5 flex justify-center">
+                    <img src="assets/images/minion.jpg" alt="Minh Binh Nguyen" class="rounded-full shadow-xl w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-white/50">
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Overview Section -->
+        <!-- 
+            This section has been removed as the video is now the background for the Hero section.
+        -->
+
+        <!-- About & Skills Section -->
+        <section id="about" class="container mx-auto px-6 py-12 md:py-20 animated-section">
+            <h2 class="text-3xl font-bold text-center text-white mb-12">About Me</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <!-- About Me Text -->
+                <div class="md:col-span-2 bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold text-brand-blue mb-4">Who I Am</h3>
+                    <p class="text-gray-800 text-base leading-relaxed space-y-4">
+                        I am a proactive Mechanical Engineering student at Washington University in St. Louis (Class of 2027), driven by a curiosity for how things work and a passion for building them better.
+                        <br><br>
+                        My experience extends from the high-speed environment of Formula SAE, where I design and analyze braking systems, to the meticulous detail required for custom bicycle builds and optimization. I am proficient in industry-standard CAD software and technical computing tools, allowing me to move seamlessly from design and simulation to hands-on application and performance analysis.
+                    </p>
+                    <!-- Removed video button -->
+                </div>
+                <!-- Skills -->
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold text-brand-blue mb-6">Core Skills</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-brand-light text-brand-blue rounded-full flex items-center justify-center">
+                                <i data-lucide="pencil-ruler" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-800">CAD Software</h4>
+                                <div class="flex flex-wrap gap-2 mt-2">
+                                    <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium">NX CAD</span>
+                                    <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium">SolidWorks</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-brand-light text-brand-blue rounded-full flex items-center justify-center">
+                                <i data-lucide="cpu" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-brand-dark">Technical Tools</h4>
+                                <div class="flex flex-wrap gap-2 mt-2">
+                                    <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">MATLAB</span>
+                                    <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">R Studio</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-brand-light text-brand-blue rounded-full flex items-center justify-center">
+                                <i data-lucide="cog" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-brand-dark">Engineering Skills</h4>
+                                <div class="flex flex-wrap gap-2 mt-2">
+                                    <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">Simulation</span>
+                                    <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">Dynamics</span>
+                                    <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">Fluid Mechanics</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Timeline Section -->
+        <section id="experience" class="container mx-auto px-6 py-12 md:py-20 animated-section">
+            <h2 class="text-3xl font-bold text-center text-white mb-16">Experience & Education</h2>
+            
+            <div class="relative max-w-3xl mx-auto">
+                <!-- Vertical Line -->
+                <div class="absolute left-4 md:left-1/2 -ml-0.5 w-1 bg-gray-200 h-full"></div>
+
+                <!-- Timeline Item - WashU Racing -->
+                <div class="relative mb-12">
+                    <div class="flex md:grid md:grid-cols-2 gap-8">
+                        <!-- Date (Left) -->
+                        <div class="hidden md:block text-right pr-8">
+                            <p class="text-sm font-semibold text-white uppercase">Aug 2025 - Present</p>
+                        </div>
+                        <!-- Content (Right) -->
+                        <div class="pl-10 md:pl-8 relative">
+                            <div class="absolute -left-2.5 md:left-[-20px] w-5 h-5 bg-brand-blue rounded-full border-4 border-brand-light"></div>
+                            <div class="bg-white p-6 rounded-lg shadow-lg">
+                                <p class="md:hidden text-sm font-semibold text-brand-blue uppercase mb-2">Aug 2025 - Present</p>
+                                <h3 class="text-xl font-bold text-brand-dark">WashU Racing (Formula SAE)</h3>
+                                <p class="text-gray-600 font-medium mb-3">Ergonomics & Braking System Team Member</p>
+                                <ul class="list-disc list-inside text-gray-700 space-y-2 text-sm">
+                                    <li>Designing and analyzing the vehicle's brake system (caliper, rotor, master cylinder).</li>
+                                    <li>Researching and selecting materials for brake rotors balancing thermal conductivity and stiffness.</li>
+                                    <li>Utilizing CAD to model and simulate brake component fit and function.</li>
+                                    <li>Performing calculations for brake bias and pedal ratio to optimize stopping power.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item - Education -->
+                <div class="relative mb-12">
+                    <div class="flex md:grid md:grid-cols-2 gap-8">
+                        <!-- Content (Left) -->
+                        <div class="hidden md:block text-right pr-8">
+                            <div class="bg-white p-6 rounded-lg shadow-lg">
+                                <p class="md:hidden text-sm font-semibold text-brand-blue uppercase mb-2">Aug 2025 - May 2027 (Expected)</p>
+                                <h3 class="text-xl font-bold text-brand-dark">Washington University in St. Louis</h3>
+                                <p class="text-gray-600 font-medium mb-3">Bachelor of Science: Mechanical Engineering</p>
+                                <p class="text-gray-700 text-sm">
+                                    <strong>Key Courses:</strong> Statics and Mechanics of Materials, CAD, Dynamics, Thermal Dynamics, Fluid Mechanics.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Date (Right) -->
+                        <div class="pl-10 md:pl-8 relative">
+                            <div class="absolute -left-2.5 md:left-[-20px] w-5 h-5 bg-brand-blue rounded-full border-4 border-brand-light"></div>
+                             <p class="hidden md:block text-sm font-semibold text-white uppercase">Aug 2025 - May 2027 (Expected)</p>
+                             <!-- Mobile Content -->
+                             <div class="md:hidden bg-white p-6 rounded-lg shadow-lg">
+                                <p class="text-sm font-semibold text-brand-blue uppercase mb-2">Aug 2025 - May 2027 (Expected)</p>
+                                <h3 class="text-xl font-bold text-brand-dark">Washington University in St. Louis</h3>
+                                <p class="text-gray-600 font-medium mb-3">Bachelor of Science: Mechanical Engineering</p>
+                                <p class="text-gray-700 text-sm">
+                                    <strong>Key Courses:</strong> Statics and Mechanics of Materials, CAD, Dynamics, Thermal Dynamics, Fluid Mechanics.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item - DePauw IT -->
+                <div class="relative mb-12">
+                    <div class="flex md:grid md:grid-cols-2 gap-8">
+                        <!-- Date (Left) -->
+                        <div class="hidden md:block text-right pr-8">
+                            <p class="text-sm font-semibold text-white uppercase">Aug 2023 - May 2025</p>
+                        </div>
+                        <!-- Content (Right) -->
+                        <div class="pl-10 md:pl-8 relative">
+                            <div class="absolute -left-2.5 md:left-[-20px] w-5 h-5 bg-brand-blue rounded-full border-4 border-brand-light"></div>
+                            <div class="bg-white p-6 rounded-lg shadow-lg">
+                                <p class="md:hidden text-sm font-semibold text-brand-blue uppercase mb-2">Aug 2023 - May 2025</p>
+                                <h3 class="text-xl font-bold text-brand-dark">DePauw University IT</h3>
+                                <p class="text-gray-600 font-medium mb-3">IT Helpdesk Intern</p>
+                                <ul class="list-disc list-inside text-gray-700 space-y-2 text-sm">
+                                    <li>Troubleshot hardware and software issues for a network of over 2,000 users.</li>
+                                    <li>Managed end-to-end setup and installation of new PC units and peripherals.</li>
+                                    <li>Maintained technical infrastructure for computer labs and classrooms.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="container mx-auto px-6 py-12 md:py-20 animated-section">
+            <h2 class="text-3xl font-bold text-center text-white mb-12">Featured Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Project 1: Cervelo C5 -->
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden group flex flex-col">
+                    <img src="https://placehold.co/600x400/0D2235/F6F9FC?text=Cervelo+C5+Build" alt="Cervelo C5 Road Bike" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-bold text-brand-blue mb-2">Cervelo C5 Road Bike Optimization</h3>
+                        <p class="text-gray-800 mb-4 flex-grow">
+                            A full-scale bicycle assembly project focusing on precise ergonomic adjustments and mechanical performance optimization, including component sourcing, ceramic bearing upgrades, and aerodynamic enhancements.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-brand-light text-brand-blue px-3 py-1 rounded-full text-sm font-medium">Ergonomics</span>
+                            <span class="bg-brand-light text-brand-blue px-3 py-1 rounded-full text-sm font-medium">Mechanical Design</span>
+                            <span class="bg-brand-light text-brand-blue px-3 py-1 rounded-full text-sm font-medium">3D Printing</span>
+                        </div>
+                        <a href="projects/cervelo-c5.html" class="inline-block text-brand-blue font-semibold group-hover:text-brand-accent transition-colors">View Details &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Project 2: WashU FSAE Brake Rotor -->
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden group flex flex-col">
+                    <img src="https://placehold.co/600x400/0D2235/F6F9FC?text=Brake+Rotor+Design" alt="WashU FSAE Brake Rotor" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-bold text-brand-blue mb-2">WashU FSAE Brake Rotor</h3>
+                        <p class="text-gray-700 mb-4 flex-grow">
+                            Design and analysis of a competition-spec brake rotor for the WashU Formula SAE vehicle. Involved material selection, thermal analysis, and CAD modeling for optimal cooling and performance.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-brand-light text-brand-blue px-3 py-1 rounded-full text-sm font-medium">SolidWorks</span>
+                            <span class="bg-brand-light text-brand-blue px-3 py-1 rounded-full text-sm font-medium">CAD/CAE</span>
+                            <span class="bg-brand-light text-brand-blue px-3 py-1 rounded-full text-sm font-medium">Material Science</span>
+                        </div>
+                        <a href="projects/brake-rotor.html" class="inline-block text-brand-blue font-semibold group-hover:text-brand-accent transition-colors">View Details &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Project 3: Pedal Box -->
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden group flex flex-col">
+                    <img src="https://placehold.co/600x400/0D2235/F6F9FC?text=Pedal+Box+Assembly" alt="Pedal Box Project" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-bold text-brand-blue mb-2">Pedal Box Assembly</h3>
+                        <p class="text-gray-700 mb-4 flex-grow">
+                            Design and optimization of the pedal box assembly for the Formula SAE vehicle. This project involved precise mechanical design, linkage analysis, and integration with the vehicle's control systems.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-brand-light text-brand-blue px-3 py-1 rounded-full text-sm font-medium">CAD Design</span>
+                            <span class="bg-brand-light text-brand-blue px-3 py-1 rounded-full text-sm font-medium">Mechanism Design</span>
+                            <span class="bg-brand-light text-brand-blue px-3 py-1 rounded-full text-sm font-medium">Analysis</span>
+                        </div>
+                        <a href="projects/pedal-box.html" class="inline-block text-brand-blue font-semibold group-hover:text-brand-accent transition-colors">View Details &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Project 4: Steering Wheel -->
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden group flex flex-col">
+                    <img src="https://placehold.co/600x400/0D2235/F6F9FC?text=Steering+Wheel+Design" alt="Steering Wheel Project" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-bold text-brand-blue mb-2">Steering Wheel Design</h3>
+                        <p class="text-gray-700 mb-4 flex-grow">
+                            Custom steering wheel design and fabrication for Formula SAE. Focused on ergonomics, driver control optimization, and integration with the vehicle's steering system.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-brand-light text-brand-blue px-3 py-1 rounded-full text-sm font-medium">Ergonomic Design</span>
+                            <span class="bg-brand-light text-brand-blue px-3 py-1 rounded-full text-sm font-medium">CAD Modeling</span>
+                            <span class="bg-brand-light text-brand-blue px-3 py-1 rounded-full text-sm font-medium">Fabrication</span>
+                        </div>
+                        <a href="projects/steering-wheel.html" class="inline-block text-brand-blue font-semibold group-hover:text-brand-accent transition-colors">View Details &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Project 5: Fun CAD Design -->
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden group flex flex-col">
+                    <img src="https://placehold.co/600x400/0D2235/F6F9FC?text=Fun+CAD+Design" alt="Fun CAD Design Project" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-bold text-brand-blue mb-2">Fun CAD Design</h3>
+                        <p class="text-gray-700 mb-4 flex-grow">
+                            Creative and exploratory CAD design projects showcasing modeling skills and design thinking. These projects demonstrate the ability to conceptualize and execute unique engineering solutions.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-brand-light text-brand-blue px-3 py-1 rounded-full text-sm font-medium">Creative Design</span>
+                            <span class="bg-brand-light text-brand-blue px-3 py-1 rounded-full text-sm font-medium">CAD Modeling</span>
+                            <span class="bg-brand-light text-brand-blue px-3 py-1 rounded-full text-sm font-medium">Visualization</span>
+                        </div>
+                        <a href="projects/fun-cad-design.html" class="inline-block text-brand-blue font-semibold group-hover:text-brand-accent transition-colors">View Details &rarr;</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="mt-24 md:mt-32 text-center animated-section">
+            <h2 class="text-3xl font-bold text-white mb-4">Get In Touch</h2>
+            <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-12">
+                I'm always open to discussing new projects, creative ideas, or opportunities. Feel free to reach out!
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <!-- Email -->
+                <a href="mailto:n.minh@wustl.edu" class="bg-white/10 backdrop-blur p-8 rounded-lg shadow-lg text-center group hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <i data-lucide="mail" class="w-12 h-12 text-brand-accent mx-auto mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="text-xl font-semibold text-white mb-1">Email</h3>
+                    <p class="text-gray-300 group-hover:text-brand-accent transition-colors">n.minh@wustl.edu</p>
+                </a>
+                <!-- Phone -->
+                <div class="bg-white/10 backdrop-blur p-8 rounded-lg shadow-lg text-center group">
+                    <i data-lucide="phone" class="w-12 h-12 text-brand-accent mx-auto mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="text-xl font-semibold text-white mb-1">Phone</h3>
+                    <p class="text-gray-300">(765) 712-2526</p>
+                </div>
+                <!-- LinkedIn -->
+                <!-- NOTE: Replace '#' with your actual LinkedIn URL -->
+                <a href="#" class="bg-white/10 backdrop-blur p-8 rounded-lg shadow-lg text-center group hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <i data-lucide="linkedin" class="w-12 h-12 text-brand-accent mx-auto mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="text-xl font-semibold text-white mb-1">LinkedIn</h3>
+                    <p class="text-gray-300 group-hover:text-brand-accent transition-colors">View Profile</p>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark mt-24 md:mt-32">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p class="text-white font-semibold tracking-wide brightness-125">&copy; 2025 Minh Binh Nguyen. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Load Custom Scripts -->
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
+
+

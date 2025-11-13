@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steering Wheel Design - Minh Binh Nguyen</title>
+
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-blue': '#005792',
+                        'brand-dark': '#0D2235',
+                        'brand-light': '#F6F9FC',
+                        'brand-accent': '#00A8E8',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Load Google Font: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Load Icons (Lucide) -->
+    <script src="https://cdn.jsdelivr.net/npm/lucide-static@latest/lucide.min.js" defer></script>
+
+    <!-- Load Custom Styles -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    
+    <!-- Starfield script -->
+    <script src="../assets/js/starfield.js"></script>
+</head>
+<body class="bg-black font-sans text-white antialiased">
+    <!-- Star background canvas (animated by starfield.js) -->
+    <canvas id="star-background" class="fixed inset-0 w-full h-full pointer-events-none z-0"></canvas>
+    
+    <!-- Header & Navigation -->
+    <header class="relative z-10 bg-black/50 backdrop-blur-md sticky top-0 border-b border-gray-800">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="../index.html" class="text-xl font-bold text-white hover:text-brand-accent transition-colors">
+                <i data-lucide="arrow-left" class="inline-block w-6 h-6 mr-2"></i>
+                Back to Portfolio
+            </a>
+            <!-- Project Navigation -->
+            <div class="flex items-center gap-4">
+                <a href="fun-cad-design.html" class="text-white hover:text-brand-accent transition-colors flex items-center">
+                    Next Project
+                    <i data-lucide="arrow-right" class="inline-block w-6 h-6 ml-2"></i>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="relative z-10 container mx-auto px-6 py-12">
+        <!-- Project Header -->
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl font-bold text-white mb-4">Steering Wheel Design</h1>
+            <div class="flex flex-wrap gap-2 mb-8">
+                <span class="bg-gray-800 text-brand-accent px-3 py-1 rounded-full text-sm font-medium">Ergonomic Design</span>
+                <span class="bg-gray-800 text-brand-accent px-3 py-1 rounded-full text-sm font-medium">CAD Modeling</span>
+                <span class="bg-gray-800 text-brand-accent px-3 py-1 rounded-full text-sm font-medium">Fabrication</span>
+            </div>
+        </div>
+
+        <!-- Project hero -->
+        <div class="project-hero max-w-5xl mx-auto mb-8">
+            <img src="https://placehold.co/1600x700/FFFFFF/000000?text=Steering+Wheel+Complete" alt="Steering Wheel Complete" class="w-full">
+            <div class="hero-caption">Steering Wheel — Ergonomic & Lightweight</div>
+        </div>
+
+        <!-- FEA / Description two-column layout -->
+        <section class="project-grid max-w-5xl mx-auto">
+            <div class="project-left space-y-4">
+                <img src="https://placehold.co/700x450/FFFFFF/000000?text=FEA+Grip+Stress" alt="FEA Grip Stress">
+                <img src="https://placehold.co/700x450/FFFFFF/000000?text=FEA+Hub+Stress" alt="FEA Hub Stress">
+            </div>
+            <div class="project-right prose prose-lg prose-invert">
+                <h2 class="project-title">Steering Wheel Design</h2>
+                <div class="callout"><strong>Result:</strong> Lighter wheel with improved driver comfort and control.</div>
+                <p>Design and fabrication of a custom steering wheel emphasizing ergonomics and lightweight construction. Focus on grip geometry, hub strength, and driver control interface.</p>
+                <h3>Highlights</h3>
+                <ul>
+                    <li>Custom grip contouring for improved hand placement</li>
+                    <li>Hub design optimized for torque transmission and weight savings</li>
+                    <li>Prototype fabrication and functional testing</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative z-10 bg-gray-900/80 mt-24">
+        <div class="container mx-auto px-6 py-8 text-center text-gray-500">
+            <p>&copy; 2025 Minh Binh Nguyen. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Load Custom Scripts -->
+    <script src="../assets/js/script.js"></script>
+</body>
+</html>

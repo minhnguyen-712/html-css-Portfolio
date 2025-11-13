@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Assets Preview</title>
+    <style>
+      body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial; padding: 20px; }
+      .asset { margin: 12px 0; }
+      .embed { width: 100%; height: 600px; border: 1px solid #ddd; }
+    </style>
+  </head>
+  <body>
+    <h1>Quick assets preview</h1>
+    <p>Replace the filenames below with the actual files you placed inside <code>assets/</code> (or put files in <code>assets/media/</code>).</p>
+
+    <h2>PDF (embedded)</h2>
+    <!-- Replace 'your-file.pdf' with the actual PDF filename in your assets folder -->
+    <div class="asset">
+      <object class="embed" data="assets/media/your-file.pdf" type="application/pdf">
+        <p>Your browser/VS Code cannot display embedded PDFs. <a href="assets/media/your-file.pdf" target="_blank" rel="noopener">Open PDF</a></p>
+      </object>
+    </div>
+
+    <h2>Image</h2>
+    <!-- Replace 'your-image.jpg' with the actual image filename in your assets folder -->
+    <div class="asset">
+      <img src="assets/media/your-image.jpg" alt="Preview image" style="max-width:100%;height:auto;border:1px solid #ddd;padding:6px;" />
+    </div>
+
+    <h2>Direct links</h2>
+    <ul>
+      <li><a href="assets/media/your-file.pdf" target="_blank" rel="noopener">Open PDF in new tab</a></li>
+      <li><a href="assets/media/your-image.jpg" target="_blank" rel="noopener">Open image in new tab</a></li>
+    </ul>
+
+    <hr />
+    <h3>How to use</h3>
+    <ol>
+      <li>Put your PDF(s) and image(s) in <code>assets/</code> or <code>assets/media/</code>.</li>
+      <li>In VS Code, click a PDF file in Explorer — with the workspace setting added, it should open using the PDF preview extension instead of showing raw bytes.</li>
+      <li>To view the HTML preview page: open <code>assets/preview.html</code> in a browser or use the Live Server extension (right-click → Open with Live Server).</li>
+    </ol>
+  </body>
+</html>

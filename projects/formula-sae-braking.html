@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formula SAE Braking System - Minh Binh Nguyen</title>
+
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-blue': '#005792',
+                        'brand-dark': '#0D2235',
+                        'brand-light': '#F6F9FC',
+                        'brand-accent': '#00A8E8',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Load Google Font: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Load Icons (Lucide) -->
+    <script src="https://cdn.jsdelivr.net/npm/lucide-static@latest/lucide.min.js" defer></script>
+
+    <!-- Load Custom Styles -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="bg-black font-sans text-white antialiased">
+    <!-- Header & Navigation -->
+    <header class="bg-black/70 backdrop-blur-md sticky top-0 z-50 border-b border-gray-800">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="../index.html" class="text-xl font-bold text-white hover:text-brand-accent transition-colors">
+                <i data-lucide="arrow-left" class="inline-block w-6 h-6 mr-2"></i>
+                Back to Portfolio
+            </a>
+            <!-- Project Navigation -->
+            <div class="flex items-center gap-4">
+                <a href="cervelo-c5.html" class="text-white hover:text-brand-accent transition-colors flex items-center">
+                    <i data-lucide="arrow-left" class="inline-block w-6 h-6 mr-2"></i>
+                    Previous Project
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <!-- Project Header -->
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl font-bold text-white mb-4">Formula SAE Braking System Design</h1>
+            <div class="flex flex-wrap gap-2 mb-8">
+                <span class="bg-gray-800 text-brand-accent px-3 py-1 rounded-full text-sm font-medium">SolidWorks</span>
+                <span class="bg-gray-800 text-brand-accent px-3 py-1 rounded-full text-sm font-medium">CAD/CAE</span>
+                <span class="bg-gray-800 text-brand-accent px-3 py-1 rounded-full text-sm font-medium">Material Science</span>
+            </div>
+        </div>
+
+        <!-- Image Gallery -->
+        <div class="max-w-4xl mx-auto mb-12">
+            <!-- Main Image -->
+            <div class="mb-4">
+                <img id="mainImage" src="https://placehold.co/1200x600/FFFFFF/000000?text=FSAE+Braking+Main" 
+                     alt="Formula SAE Braking System" 
+                     class="w-full rounded-lg shadow-lg">
+            </div>
+            <!-- Thumbnail Navigation -->
+            <div class="grid grid-cols-4 gap-4">
+                <button onclick="changeImage(0)" class="gallery-thumbnail rounded-lg overflow-hidden border-2 border-transparent hover:border-brand-accent transition-colors">
+                    <img src="https://placehold.co/300x200/FFFFFF/000000?text=Overview" alt="FSAE Braking Overview" class="w-full">
+                </button>
+                <button onclick="changeImage(1)" class="gallery-thumbnail rounded-lg overflow-hidden border-2 border-transparent hover:border-brand-accent transition-colors">
+                    <img src="https://placehold.co/300x200/FFFFFF/000000?text=Simulation" alt="FEA Simulation" class="w-full">
+                </button>
+                <button onclick="changeImage(2)" class="gallery-thumbnail rounded-lg overflow-hidden border-2 border-transparent hover:border-brand-accent transition-colors">
+                    <img src="https://placehold.co/300x200/FFFFFF/000000?text=Assembly" alt="Assembly View" class="w-full">
+                </button>
+                <button onclick="changeImage(3)" class="gallery-thumbnail rounded-lg overflow-hidden border-2 border-transparent hover:border-brand-accent transition-colors">
+                    <img src="https://placehold.co/300x200/FFFFFF/000000?text=Testing" alt="Testing Setup" class="w-full">
+                </button>
+            </div>
+        </div>
+
+        <!-- Project Content -->
+    <div class="max-w-4xl mx-auto prose prose-lg prose-invert">
+            <h2>Project Overview</h2>
+            <p>
+                Designed and analyzed a complete braking system for the WashU Racing Formula SAE vehicle. The project focused on optimizing stopping power while maintaining reliability and meeting competition regulations.
+            </p>
+
+            <h2>Key Responsibilities</h2>
+            <ul>
+                <li>Led the design and analysis of brake rotors and calipers</li>
+                <li>Performed thermal and mechanical stress simulations</li>
+                <li>Selected materials based on performance requirements</li>
+                <li>Integrated the system with the vehicle's pedal box</li>
+            </ul>
+
+            <h2>Technical Details</h2>
+            <p>
+                The braking system design incorporated several critical components:
+            </p>
+            <ul>
+                <li>Dual-piston floating calipers for optimal pad contact</li>
+                <li>Ventilated rotors with computational fluid dynamics (CFD) validated cooling</li>
+                <li>Adjustable brake bias system</li>
+                <li>Custom mounting brackets designed for minimal flex</li>
+            </ul>
+
+            <h2>Engineering Analysis</h2>
+            <p>
+                Comprehensive analysis was performed using various tools:
+            </p>
+            <ul>
+                <li>FEA analysis for structural integrity</li>
+                <li>Thermal simulation for heat dissipation</li>
+                <li>Dynamic load calculations for various racing conditions</li>
+                <li>Weight optimization while maintaining safety factors</li>
+            </ul>
+
+            <h2>Results & Performance</h2>
+            <ul>
+                <li>Achieved 20% reduction in stopping distance</li>
+                <li>Improved thermal efficiency by 30%</li>
+                <li>Reduced overall system weight by 15%</li>
+                <li>Met all FSAE safety requirements with margin</li>
+            </ul>
+
+            <h2>Tools & Software Used</h2>
+            <ul>
+                <li>SolidWorks for 3D modeling and assembly</li>
+                <li>ANSYS for FEA and thermal analysis</li>
+                <li>MATLAB for performance calculations</li>
+                <li>Data acquisition system for testing</li>
+            </ul>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 mt-24">
+        <div class="container mx-auto px-6 py-8 text-center text-gray-500">
+            <p>&copy; 2025 Minh Binh Nguyen. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Load Custom Scripts -->
+    <script src="../assets/js/script.js"></script>
+    <script>
+        // Image gallery functionality
+        const images = [
+            'https://placehold.co/1200x600/FFFFFF/000000?text=FSAE+Braking+Main',
+            'https://placehold.co/1200x600/FFFFFF/000000?text=FEA+Simulation',
+            'https://placehold.co/1200x600/FFFFFF/000000?text=Assembly+View',
+            'https://placehold.co/1200x600/FFFFFF/000000?text=Testing'
+        ];
+        
+        function changeImage(index) {
+            const mainImage = document.getElementById('mainImage');
+            mainImage.src = images[index];
+            
+            // Update active state of thumbnails
+            document.querySelectorAll('.gallery-thumbnail').forEach((thumb, i) => {
+                if (i === index) {
+                    thumb.classList.add('border-brand-accent');
+                } else {
+                    thumb.classList.remove('border-brand-accent');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

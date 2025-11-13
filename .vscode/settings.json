@@ -1,0 +1,9 @@
+{
+  // Open PDFs using the installed PDF preview extension (tomoki1207.pdf)
+  "workbench.editorAssociations": [
+    {
+      "viewType": "tomoki1207.pdf",
+      "filenamePattern": "*.pdf"
+    }
+  ]
+}

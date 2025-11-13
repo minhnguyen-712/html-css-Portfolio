@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun CAD Design - Minh Binh Nguyen</title>
+
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-blue': '#005792',
+                        'brand-dark': '#0D2235',
+                        'brand-light': '#F6F9FC',
+                        'brand-accent': '#00A8E8',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Load Google Font: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Load Icons (Lucide) -->
+    <script src="https://cdn.jsdelivr.net/npm/lucide-static@latest/lucide.min.js" defer></script>
+
+    <!-- Load Custom Styles -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    
+    <!-- Starfield script -->
+    <script src="../assets/js/starfield.js"></script>
+</head>
+<body class="bg-black font-sans text-white antialiased">
+    <!-- Star background canvas (animated by starfield.js) -->
+    <canvas id="star-background" class="fixed inset-0 w-full h-full pointer-events-none z-0"></canvas>
+    
+    <!-- Header & Navigation -->
+    <header class="relative z-10 bg-black/50 backdrop-blur-md sticky top-0 border-b border-gray-800">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="../index.html" class="text-xl font-bold text-white hover:text-brand-accent transition-colors">
+                <i data-lucide="arrow-left" class="inline-block w-6 h-6 mr-2"></i>
+                Back to Portfolio
+            </a>
+            <!-- Project Navigation -->
+            <div class="flex items-center gap-4">
+                <a href="cervelo-c5.html" class="text-white hover:text-brand-accent transition-colors flex items-center">
+                    Back to Start
+                    <i data-lucide="arrow-right" class="inline-block w-6 h-6 ml-2"></i>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="relative z-10 container mx-auto px-6 py-12">
+        <!-- Project Header -->
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl font-bold text-white mb-4">Fun CAD Design</h1>
+            <div class="flex flex-wrap gap-2 mb-8">
+                <span class="bg-gray-800 text-brand-accent px-3 py-1 rounded-full text-sm font-medium">Creative Design</span>
+                <span class="bg-gray-800 text-brand-accent px-3 py-1 rounded-full text-sm font-medium">CAD Modeling</span>
+                <span class="bg-gray-800 text-brand-accent px-3 py-1 rounded-full text-sm font-medium">Visualization</span>
+            </div>
+        </div>
+
+        <!-- Image Gallery -->
+        <div class="max-w-4xl mx-auto mb-12">
+            <!-- Main Image -->
+            <div class="mb-4">
+                <img id="mainImage" src="https://placehold.co/1200x600/FFFFFF/000000?text=Fun+CAD+Design" 
+                     alt="Fun CAD Design" 
+                     class="w-full rounded-lg shadow-lg">
+            </div>
+            <!-- Thumbnail Navigation -->
+            <div class="grid grid-cols-4 gap-4">
+                <button onclick="changeImage(0)" class="gallery-thumbnail rounded-lg overflow-hidden border-2 border-transparent hover:border-brand-accent transition-colors">
+                    <img src="https://placehold.co/300x200/FFFFFF/000000?text=Design+1" alt="Design View 1" class="w-full">
+                </button>
+                <button onclick="changeImage(1)" class="gallery-thumbnail rounded-lg overflow-hidden border-2 border-transparent hover:border-brand-accent transition-colors">
+                    <img src="https://placehold.co/300x200/FFFFFF/000000?text=Design+2" alt="Design View 2" class="w-full">
+                </button>
+                <button onclick="changeImage(2)" class="gallery-thumbnail rounded-lg overflow-hidden border-2 border-transparent hover:border-brand-accent transition-colors">
+                    <img src="https://placehold.co/300x200/FFFFFF/000000?text=Design+3" alt="Design View 3" class="w-full">
+                </button>
+                <button onclick="changeImage(3)" class="gallery-thumbnail rounded-lg overflow-hidden border-2 border-transparent hover:border-brand-accent transition-colors">
+                    <img src="https://placehold.co/300x200/FFFFFF/000000?text=Rendered+View" alt="Rendered View" class="w-full">
+                </button>
+            </div>
+        </div>
+
+        <!-- Project Content -->
+        <div class="max-w-4xl mx-auto prose prose-lg prose-invert">
+            <h2>Project Overview</h2>
+            <p>
+                A collection of creative and exploratory CAD design projects showcasing advanced modeling skills and innovative design thinking. These projects demonstrate the ability to conceptualize unique engineering solutions and execute them with precision using professional CAD tools.
+            </p>
+
+            <h2>Project Highlights</h2>
+            <ul>
+                <li>Creative geometric design exploring form and function</li>
+                <li>Advanced surface modeling and complex geometry manipulation</li>
+                <li>Photorealistic rendering and visualization techniques</li>
+                <li>Innovation in design approach and problem-solving</li>
+                <li>Demonstration of CAD mastery and creative thinking</li>
+            </ul>
+
+            <h2>Design Philosophy</h2>
+            <p>
+                These projects emphasize the intersection of engineering and creativity, exploring how technical precision can be combined with artistic vision. Each design prioritizes both aesthetic appeal and functional engineering principles.
+            </p>
+            <ul>
+                <li>Balance between form and function</li>
+                <li>Innovative use of CAD features and modeling techniques</li>
+                <li>Attention to detail in every aspect of the design</li>
+                <li>Exploration of unconventional design approaches</li>
+                <li>High-quality visualization and presentation</li>
+            </ul>
+
+            <h2>Technical Accomplishments</h2>
+            <p>
+                These designs demonstrate advanced CAD capabilities:
+            </p>
+            <ul>
+                <li>Complex surface geometry and parametric design</li>
+                <li>Advanced material representation and rendering</li>
+                <li>Detailed assembly modeling with multiple components</li>
+                <li>Professional documentation and technical drawings</li>
+                <li>Animation and dynamic visualization techniques</li>
+            </ul>
+
+            <h2>Tools & Technologies Used</h2>
+            <ul>
+                <li>SolidWorks for 3D CAD modeling and design</li>
+                <li>Advanced surface and modeling tools for complex geometry</li>
+                <li>Professional rendering software for photorealistic visualization</li>
+                <li>Animation tools for dynamic presentation</li>
+                <li>Technical drawing and documentation tools</li>
+            </ul>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative z-10 bg-gray-900/80 mt-24">
+        <div class="container mx-auto px-6 py-8 text-center text-gray-500">
+            <p>&copy; 2025 Minh Binh Nguyen. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Load Custom Scripts -->
+    <script src="../assets/js/script.js"></script>
+    <script>
+        // Image gallery functionality
+        const images = [
+            'https://placehold.co/1200x600/FFFFFF/000000?text=Fun+CAD+Design',
+            'https://placehold.co/1200x600/FFFFFF/000000?text=Design+View+2',
+            'https://placehold.co/1200x600/FFFFFF/000000?text=Design+View+3',
+            'https://placehold.co/1200x600/FFFFFF/000000?text=Rendered+View'
+        ];
+        
+        function changeImage(index) {
+            const mainImage = document.getElementById('mainImage');
+            mainImage.src = images[index];
+            
+            // Update active state of thumbnails
+            document.querySelectorAll('.gallery-thumbnail').forEach((thumb, i) => {
+                if (i === index) {
+                    thumb.classList.add('border-brand-accent');
+                } else {
+                    thumb.classList.remove('border-brand-accent');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

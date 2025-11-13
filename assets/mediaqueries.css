@@ -1,0 +1,7 @@
+/* Minimal responsive helpers
+   Use these to show/hide desktop vs mobile nav if needed.
+*/
+@media screen and (max-width: 900px) {
+  .md\:hidden { display: block !important; }
+  .md\:flex { display: none !important; }
+}
