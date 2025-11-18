@@ -62,34 +62,25 @@
 
     <main class="relative z-10 container mx-auto px-6 py-12">
         <!-- Project Header -->
-        <div class="max-w-4xl mx-auto">
+        <div class="max-w-4xl mx-auto mb-16">
             <h1 class="text-4xl font-bold text-white mb-4">Steering Wheel Redesign</h1>
             <div class="flex flex-wrap gap-2 mb-8">
                 <span class="bg-gray-800 text-brand-accent px-3 py-1 rounded-full text-sm font-medium">Ergonomic Design</span>
                 <span class="bg-gray-800 text-brand-accent px-3 py-1 rounded-full text-sm font-medium">CAD Modeling</span>
                 <span class="bg-gray-800 text-brand-accent px-3 py-1 rounded-full text-sm font-medium">Fabrication</span>
             </div>
+            <div class="prose prose-lg prose-invert max-w-none">
+                <p>
+                    On this project, I contributed to the ergonomic redesign of the steering wheel. The goal was not just to create a part, but to engineer a critical driver interface that was comfortable, safe, and reliable under racing conditions. This required a deep dive into human-centered design, force analysis, and rules compliance.
+                </p>
+            </div>
         </div>
         
         <!-- Assembly Views -->
-        <div class="max-w-5xl mx-auto mb-12">
+        <section class="max-w-5xl mx-auto mb-16">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-                <div class="text-center">
-                    <h3 class="font-bold mb-2 text-lg">Full assembly front</h3>
-                    <img src="../assets/images/Full assembly front.png" alt="Full assembly front" class="w-full rounded-lg shadow-lg">
-                </div>
-                <div class="text-center">
-                    <h3 class="font-bold mb-2 text-lg">Full assembly back</h3>
-                    <img src="../assets/images/Full assembly back.png" alt="Full assembly back" class="w-full rounded-lg shadow-lg">
-                </div>
-            </div>
-        </div>
-
-        <!-- Description Section -->
-        <section class="max-w-4xl mx-auto prose prose-lg prose-invert mb-12">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8">
-                <div><div class="callout"><strong>Problem:</strong> Driver feedback indicated that the previous steering wheel grips were uncomfortable and had a short lifespan. A new, more ergonomic and durable grip was needed.</div></div>
-                <div><div class="callout"><strong>My Contribution:</strong> I contributed to the ergonomic refinement of the steering wheel. I used driver feedback and research to inform a new 3D-printed grip design. This new design focused on reducing the circumference to improve driver comfort and responsive handling</div></div>
+                <div class="text-center"><h3 class="font-bold mb-2 text-lg">Full assembly front</h3><img src="../assets/images/Full assembly front.png" alt="Full assembly front" class="w-full rounded-lg shadow-lg"></div>
+                <div class="text-center"><h3 class="font-bold mb-2 text-lg">Full assembly back</h3><img src="../assets/images/Full assembly back.png" alt="Full assembly back" class="w-full rounded-lg shadow-lg"></div>
             </div>
         </section>
 
@@ -115,6 +106,57 @@
                 <img src="../assets/images/base drawing.png?v=2" alt="Base Drawing View" class="w-full rounded-lg shadow-lg">
             </div>
         </div>
+
+        <!-- Ergonomic & Positional Design -->
+        <section class="max-w-5xl mx-auto mb-16">
+            <h2 class="text-3xl font-bold mb-6 text-white text-center">Ergonomic & Positional Design (The "Driver Fit")</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <img src="../assets/images/ergonomic seating view.png" alt="Ergonomic Seating View" class="w-full rounded-lg shadow-lg">
+                </div>
+                <div class="prose prose-lg prose-invert max-w-none">
+                    <p>Before finalizing the grip design, the team performed a digital ergonomic study using a CAD driver model. This allowed us to validate the steering wheel's position for driver comfort and control.</p>
+                    <ul>
+                        <li><strong>Driver Reach:</strong> We analyzed the distance from the driver's chest to the wheel, confirming an optimal range of 14-18 inches. The screenshot shows a validated distance of 0.356m (14 inches).</li>
+                        <li><strong>Arm Angle:</strong> This position ensures the driver's arms are never locked straight, which is critical for reducing fatigue and allowing for quick, responsive steering.</li>
+                        <li><strong>Steering Angle:</strong> The entire assembly was tilted at an ideal 10° from vertical to align with the driver's shoulders, making rotation feel natural.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Structural & Force Analysis -->
+        <section class="max-w-5xl mx-auto mb-16">
+            <h2 class="text-3xl font-bold mb-6 text-white text-center">Structural & Force Analysis (The "Strength Test")</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="prose prose-lg prose-invert max-w-none">
+                    <p>A comfortable grip is useless if it breaks. I analyzed the forces the steering wheel must withstand to ensure the new design and materials (like TPU-95A) were strong enough. We used 5th percentile male strength data as our baseline:</p>
+                    <ul>
+                        <li><strong>Maximum Lateral Force (Turning):</strong> This is the force the driver applies to turn the wheel. Using the data, this was calculated as 196 N (98 N from each arm).</li>
+                        <li><strong>Maximum Axial Force (Push/Pull):</strong> This simulates a driver pulling on or pushing against the wheel. This force was calculated to be 498 N (249 N from each arm).</li>
+                    </ul>
+                    <p>My material analysis confirmed that the new grip design would reliably handle these peak forces without failing.</p>
+                </div>
+                <div>
+                    <img src="../assets/images/Force analysis seat.png" alt="Force Analysis" class="w-full rounded-lg shadow-lg">
+                </div>
+            </div>
+        </section>
+
+        <!-- Rules Compliance Section -->
+        <section class="max-w-5xl mx-auto mb-16">
+            <h2 class="text-3xl font-bold mb-6 text-white text-center">Rules Compliance (The "Constraint")</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <img src="../assets/images/steering wheel position rule.png" alt="Steering Wheel Position Rule" class="w-full rounded-lg shadow-lg">
+                </div>
+                <div class="prose prose-lg prose-invert max-w-none">
+                    <p>
+                        Finally, the entire design was constrained by the official FSAE rules. Our ergonomic position had to fit within the mandated safety box. Specifically, rule T.1.4.4 requires that the top of the steering wheel must always be below the top-most point of the Front Hoop. Our design successfully met this rule, fitting within all geometric and safety constraints.
+                    </p>
+                </div>
+            </div>
+        </section>
 
     </main>
 
