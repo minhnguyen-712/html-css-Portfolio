@@ -18,7 +18,7 @@ class StarField {
     init() {
         // Create stars
         this.stars = [];
-        const numStars = Math.floor((this.width * this.height) / 2000); // Adjust density
+        const numStars = Math.floor((this.width * this.height) / 4000); // Adjust density
         
         for (let i = 0; i < numStars; i++) {
             this.stars.push({
